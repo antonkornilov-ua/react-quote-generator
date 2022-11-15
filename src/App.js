@@ -1,25 +1,52 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [quoteInfo, setQuoteInfo] = useState({});
+
+    useEffect(() => {
+        getQuote();
+    }, []);
+    const getQuote = () => {
+        fetch('https://api.quotable.io/random')
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                setQuoteInfo({
+                    text: data.content,
+                    author: data.author,
+                });
+                console.log(data);
+            });
+    };
+    return (
+        <div className="App">
+            <div id="quote-box">
+                <p id="text">
+                    <i class="fa-solid fa-quote-left"></i>
+                    {quoteInfo.text}
+                </p>
+                <p id="author">{`by ${quoteInfo.author}`}</p>
+                <div className="quote-buttons">
+                    <button id="new-quote" onClick={getQuote}>
+                        New Quote
+                    </button>
+                    <a
+                        id="tweet-quote"
+                        target={'_blank'}
+                        rel="noreferrer"
+                        href={
+                            `https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=` +
+                            quoteInfo.text +
+                            quoteInfo.author
+                        }>
+                        <i class="fa-brands fa-twitter fa-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;

@@ -1,38 +1,89 @@
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 10%;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ================= */
+#quote-box {
+    min-width: 450px;
+    max-width: 550px;
+    min-height: 250px;
+    max-height: 350px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App #quote-box {
+    background-color: rgb(253, 255, 196);
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+        rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+        rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#text,
+#author {
+    font-size: 20px;
+    margin-left: 25px;
+    margin-right: 20px;
 }
-
-.App-link {
-  color: #61dafb;
+#author {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20%;
+    margin-bottom: 1%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.quote-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 5%;
+}
+#new-quote {
+    width: 100px;
+    border-radius: 5px;
+    background: inherit;
+    font-size: 16px;
+}
+#new-quote:hover {
+    background: rgb(203, 205, 146);
+    transform: scale(1.2);
+}
+#new-quote:active {
+    transform: translateY(2px);
+    color: red;
+    transform: scale(0.8);
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1), -15px -15px 20px rgba(255, 255, 255, 0.2);
+}
+#tweet-quote:hover {
+    transform: scale(1.2);
+}
+#tweet-quote:active {
+    transform: translateY(2px);
+    color: red;
+}
+/* ========================= */
+@media (max-width: 1199.98px) {
+    #quote-box {
+        max-width: 450px;
+        min-width: 350px;
+    }
+}
+@media (max-width: 991.98px) {
+    #quote-box {
+        max-width: 350px;
+        max-width: 250px;
+    }
+}
+@media (max-width: 767.98px) {
+    #quote-box {
+        max-width: 300px;
+        min-width: 250px;
+        max-height: 400px;
+        min-height: 350px;
+    }
 }
