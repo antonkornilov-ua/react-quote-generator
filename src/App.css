@@ -48,6 +48,7 @@
     border-radius: 5px;
     background: inherit;
     font-size: 16px;
+    cursor: pointer;
 }
 #new-quote:hover {
     background: rgb(203, 205, 146);
@@ -55,17 +56,25 @@
 }
 #new-quote:active {
     transform: translateY(2px);
-    color: red;
+    color: blue;
     transform: scale(0.8);
     box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1), -15px -15px 20px rgba(255, 255, 255, 0.2);
+}
+#tweet-quote{
+  color: inherit;
+  cursor: pointer;
 }
 #tweet-quote:hover {
     transform: scale(1.2);
 }
 #tweet-quote:active {
     transform: translateY(2px);
-    color: red;
+    color: blue;
 }
+#tweet-quote:visited {
+    color: inherit;
+}
+
 /* ========================= */
 @media (max-width: 1199.98px) {
     #quote-box {
