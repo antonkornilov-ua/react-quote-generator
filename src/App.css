@@ -36,6 +36,7 @@
     justify-content: flex-end;
     margin-right: 20%;
     margin-bottom: 1%;
+    word-wrap: break-word;
 }
 .quote-buttons {
     display: flex;
